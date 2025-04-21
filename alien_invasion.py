@@ -1,5 +1,6 @@
 import sys
 import pygame
+import random
 from time import sleep
 from settings import Settings
 from ship import Ship
@@ -34,7 +35,7 @@ class AlienInvasion:
         while True:
             # Watches for inputs
             self._check_events()
-            
+
             if self.game_active:
                 self.ship.update()
                 self._update_bullets()
@@ -86,9 +87,12 @@ class AlienInvasion:
         alien_width, alien_height = alien.rect.size 
         current_x, current_y = alien_width, alien_height
 
-        while current_y < (self.settings.screen_height - 3 * alien_height):
-            while current_x < (self.settings.screen_width - 2 * alien_width):
-                self._create_alien(current_x, current_y)
+        while current_y < (self.settings.screen_height - 6 * alien_height):
+            while current_x < (self.settings.screen_width - 4 * alien_width):
+                # Randomizes the fleet (1 in X spawn chance (currently 1 in 3)
+                chance = random.randint(1,3)
+                if chance == 1:
+                    self._create_alien(current_x, current_y)
                 current_x += 2 * alien_width
 
             current_x = alien_width
