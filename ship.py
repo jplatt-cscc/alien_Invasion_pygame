@@ -9,7 +9,7 @@ class Ship:
         self.screen_rect = ai_game.screen.get_rect()
 
         # Load the ship image
-        self.image = pygame.image.load('alien_Invasion_pygame\Assets\images\ship.png')
+        self.image = pygame.image.load('alien_Invasion_pygame\Assets\images\ship1.png')
         self.rect = self.image.get_rect()
 
         # Start new ships at the bottom of the screen
