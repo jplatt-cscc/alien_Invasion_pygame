@@ -8,11 +8,10 @@ class Bullet(Sprite):
         super().__init__()
         self.screen = ai_game.screen
         self.settings = ai_game.settings
-        self.color = self.settings.bullet_color
+        """ Laser asset made by me in the program "Pixelorama" """
+        self.image = pygame.image.load('alien_Invasion_pygame\Assets\images\laser1.png')
+        self.rect = self.image.get_rect()
 
-        # Sets Bullet position
-        self.rect = pygame.Rect(0, 0, self.settings.bullet_width,
-            self.settings.bullet_height)
         self.rect.midtop = ai_game.ship.rect.midtop
 
         # Stores bullet position
@@ -25,4 +24,4 @@ class Bullet(Sprite):
 
     def draw_bullet(self):
         # Draws bullet
-        pygame.draw.rect(self.screen, self.color, self.rect)
+        self.screen.blit(self.image, self.rect)

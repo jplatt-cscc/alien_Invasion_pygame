@@ -10,7 +10,8 @@ class Alien(Sprite):
         self.settings = ai_game.settings
 
         # Load the alien image
-        self.image = pygame.image.load('alien_Invasion_pygame\Assets\images\enemy_4.png')
+        """ Alien asset made by me in the program "Pixelorama" """
+        self.image = pygame.image.load('alien_Invasion_pygame\Assets\images\enemy1.png')
         self.rect = self.image.get_rect()
 
         # Start each new alien nat the top of the screen

@@ -116,10 +116,10 @@ class AlienInvasion:
         # Creates fleets
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size 
-        current_x, current_y = alien_width, (alien_height * 3)
+        current_x, current_y = alien_width, (alien_height * 4)
 
         while current_y < (self.settings.screen_height - 6 * alien_height):
-            while current_x < (self.settings.screen_width - 4 * alien_width):
+            while current_x < (self.settings.screen_width - 5 * alien_width):
                 # Randomizes the fleet (1 in X spawn chance (currently 1 in 3)
                 chance = random.randint(1,3)
                 if chance == 1:
@@ -218,6 +218,7 @@ class AlienInvasion:
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
+        self.screen.blit(self.settings.bg_image, (0, 0))
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.ship.blitme()
