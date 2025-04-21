@@ -9,6 +9,7 @@ from alien import Alien
 from game_stats import GameStats
 from button import Button
 from scoreboard import Scoreboard
+from music import Music
 
 class AlienInvasion:
 
@@ -26,6 +27,7 @@ class AlienInvasion:
         
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
+        self.music = Music()
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
@@ -96,11 +98,14 @@ class AlienInvasion:
         self.sb.prep_level()
         self.sb.prep_ships()
         self.settings.initialize_dynamic_settings()
+        self.music.initialize_music()
+        self.music.start()
         self.bullets.empty()
         self.aliens.empty()
         self._create_fleet()
         self.ship.center_ship()
         self.game_active = True
+
         # Hide the mouse cursor.
         pygame.mouse.set_visible(False)
     
@@ -215,6 +220,7 @@ class AlienInvasion:
         else:
             self.game_active = False
             pygame.mouse.set_visible(True)
+            self.music.stop()
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)

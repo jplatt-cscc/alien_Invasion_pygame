@@ -30,7 +30,7 @@ class Settings:
         self.speedup_scale = 1.5
 
         # Scoring settings
-        self.score_scale = 1.5
+        self.score_scale = 1.5        
 
         # Dynamic settings
         self.initialize_dynamic_settings()
@@ -54,4 +54,5 @@ class Settings:
         self.alien_points = int(self.alien_points * self.score_scale)
         print(self.alien_points)
 
+    
 
