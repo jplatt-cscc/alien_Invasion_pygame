@@ -1,4 +1,5 @@
 class GameStats:
+    """ Class for handling & reseting the game stats """
 
     def __init__(self, ai_game):
         # Initialize stats

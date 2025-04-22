@@ -1,6 +1,7 @@
 import pygame
 
 class Settings:
+    """ Class for handling all the game settings """
 
     def __init__(self):
         # Initialize settings
@@ -10,6 +11,7 @@ class Settings:
         self.screen_height = 720
         self.bg_color = (150, 150, 150)
         """ Background image "Space Backdrop" by: beren77, from OpenGameArt.Org """
+        # https://opengameart.org/content/space-backdrop
         self.bg_image = pygame.image.load('alien_Invasion_pygame\Assets\images\spacefield_a-000.png')
 
         # Ship Settings

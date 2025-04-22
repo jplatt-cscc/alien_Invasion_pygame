@@ -3,6 +3,7 @@ from pygame.sprite import Group
 from ship import Ship
 
 class Scoreboard:
+    """ Class for creating the scoreboard & UI """
 
     def __init__(self, ai_game):
         # Initialize scoreboard

@@ -13,11 +13,12 @@ from music import Music
 from sound import Sound
 
 class AlienInvasion:
+    """ Main game class """
 
     def __init__(self):
         # Initializes the game
         pygame.init()
-        # Creates game tick rate & settings vars
+        # Creates game tick rate & loads settings.py
         self.clock = pygame.time.Clock()
         self.settings = Settings()
         
@@ -26,6 +27,7 @@ class AlienInvasion:
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
         
+        # Loads other .py files
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
         self.music = Music()

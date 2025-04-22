@@ -2,6 +2,7 @@ import pygame
 from pygame.sprite import Sprite
 
 class Ship(Sprite):
+    """ Class to create and move the ship """
 
     def __init__(self, ai_game):
         # Initialize the ship
@@ -11,7 +12,7 @@ class Ship(Sprite):
         self.screen_rect = ai_game.screen.get_rect()
 
         # Load the ship image
-        """ Ship asset made by me in the program "Pixelorama" """
+        """ Ship asset made by me in the program 'Pixelorama' """
         self.image = pygame.image.load('alien_Invasion_pygame\Assets\images\ship1.png')
         self.rect = self.image.get_rect()
 
