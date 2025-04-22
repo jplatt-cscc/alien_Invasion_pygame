@@ -12,7 +12,7 @@ class Button:
         self.width, self.height = 200, 50
         self.button_color = (0, 135, 0)
         self.text_color = (255, 255, 255)
-        self.font = pygame.font.SysFont(None, 48)
+        self.font = pygame.font.Font('alien_Invasion_pygame\Assets\Fonts\Rubik_Moonrocks\RubikMoonrocks-Regular.ttf', 48)
 
         self.rect = pygame.Rect(0, 0, self.width, self.height)
         self.rect.center = self.screen_rect.center
