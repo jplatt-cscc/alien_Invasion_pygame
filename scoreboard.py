@@ -15,6 +15,7 @@ class Scoreboard:
 
         # Font settings
         self.text_color = (30, 30, 30)
+        """ Font from Google Fonts: https://fonts.google.com/specimen/Rubik+Moonrocks """
         self.font = pygame.font.Font('alien_Invasion_pygame\Assets\Fonts\Rubik_Moonrocks\RubikMoonrocks-Regular.ttf', 48)
 
         self.prep_score()
