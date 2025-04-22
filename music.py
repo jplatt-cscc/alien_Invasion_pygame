@@ -1,5 +1,4 @@
 import pygame
-# Music is loaded by settings.py
 
 class Music:
     """ Controls for starting and stopping the music """
@@ -8,7 +7,7 @@ class Music:
         # Load & configure music
         """ Music created by me on 'BeepBox.co' """
         self.bg_music = pygame.mixer.music.load('alien_Invasion_pygame\Assets\sound\BeepBox-Song1.wav')
-        self.bg_volume = pygame.mixer.music.set_volume(0.3)
+        self.bg_volume = pygame.mixer.music.set_volume(0.4)
 
     def start(self):        
         # Starts & stops the music

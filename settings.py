@@ -35,6 +35,7 @@ class Settings:
         # Dynamic settings
         self.initialize_dynamic_settings()
 
+
     def initialize_dynamic_settings(self):
         # Initial dynamic settings values
         self.ship_speed = 2

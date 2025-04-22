@@ -10,6 +10,7 @@ from game_stats import GameStats
 from button import Button
 from scoreboard import Scoreboard
 from music import Music
+from sound import Sound
 
 class AlienInvasion:
 
@@ -28,6 +29,7 @@ class AlienInvasion:
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
         self.music = Music()
+        self.sound = Sound()
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
@@ -100,6 +102,7 @@ class AlienInvasion:
         self.settings.initialize_dynamic_settings()
         self.music.initialize_music()
         self.music.start()
+        self.sound.initialize_sound()
         self.bullets.empty()
         self.aliens.empty()
         self._create_fleet()
@@ -163,6 +166,7 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+            self.sound._play_sound(self.sound.sound_bullet)
     
     def _update_bullets(self):
         # Update bullet position
@@ -183,6 +187,7 @@ class AlienInvasion:
                 self.stats.score += self.settings.alien_points
                 self.sb.prep_score()
                 self.sb.check_high_score()
+                self.sound._play_sound(self.sound.sound_explosion)
         
         # Check if fleet is destroyed
         if not self.aliens:
